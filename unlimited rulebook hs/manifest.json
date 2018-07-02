@@ -1,0 +1,15 @@
+{
+	"name": "Unlimited Rulebook HS",
+	"version": "1.0.1",
+	"description": "Mainpage magnet links. by Ertauren",
+	"permissions": ["tabs", "*://horriblesubs.info/*", "*://nyaa.si/user/HorribleSubs/*"],
+	"content_scripts": [{
+		"matches": ["*://horriblesubs.info/*"],
+		"js": ["click.js"]
+		}
+	],
+	"web_accessible_resources": [
+        "click.js"
+    ],
+	"manifest_version": 2
+}
