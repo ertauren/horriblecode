@@ -17,9 +17,10 @@ function convertToList(wholeData){ // whole data as element
 
     for (var i=0; i<75; i++){
         var row = wholeData.children[i];
-        
+        var x = 0;
+        if((row.children[1].children[0].getAttribute("class")) == "comments"){x=1;}
         tempObj = [
-            row.children[1].children[0].getAttribute("title"),
+            row.children[1].children[x].getAttribute("title"),
             row.children[2].children[1].getAttribute("href"), // magnet
             ("https://nyaa.si")+row.children[2].children[0].getAttribute("href") // torrent
         ]
@@ -34,6 +35,7 @@ function getRequestedLinkObj(wholeDataAsList, resolution, animeName, episodeNo){
         resolution = "480p";
     }
     var qTitle = "[HorribleSubs] "+animeName+"- "+episodeNo+" ["+resolution+"].mkv";
+    console.log(qTitle);
     // create query obj
     var foundVal = [];
     for (var i=0; i<75; i++){
