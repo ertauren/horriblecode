@@ -14,7 +14,6 @@ function httpGetAsync(theUrl, callback)
 function convertToList(wholeData){ // whole data as element
     var retList = [];
     var tempObj = []; // title, magnet, torrent
-
     for (var i=0; i<75; i++){
         var row = wholeData.children[i];
         var x = 0;
@@ -35,7 +34,6 @@ function getRequestedLinkObj(wholeDataAsList, resolution, animeName, episodeNo){
         resolution = "480p";
     }
     var qTitle = "[HorribleSubs] "+animeName+"- "+episodeNo+" ["+resolution+"].mkv";
-    console.log(qTitle);
     // create query obj
     var foundVal = [];
     for (var i=0; i<75; i++){
