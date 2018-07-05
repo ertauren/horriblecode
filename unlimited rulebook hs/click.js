@@ -33,7 +33,7 @@ function getRequestedLinkObj(wholeDataAsList, resolution, animeName, episodeNo){
     if (resolution == "SD"){
         resolution = "480p";
     }
-    var qTitle = "[HorribleSubs] "+animeName+"- "+episodeNo+" ["+resolution+"].mkv";
+    var qTitle = "[HorribleSubs] "+animeName+episodeNo+" ["+resolution+"].mkv";
     // create query obj
     var foundVal = [];
     for (var i=0; i<75; i++){
@@ -46,8 +46,8 @@ function getRequestedLinkObj(wholeDataAsList, resolution, animeName, episodeNo){
 }
 
 function editReleases(wholeReleases, theList){ //as document element
-    for (var i=0; i<21; i++){ //  LINE 49
-        if(i == 5){i++;}
+    for (var i=0; i<11; i++){ //  LINE 49
+        if(i == 3){i++;}
         var releaseRow = wholeReleases.children[i].children[0];
         var hrefLink = releaseRow.getAttribute("href");
         var dlLinks = releaseRow.children[2];
@@ -85,8 +85,9 @@ window.onload = function(){
 
         var nyaaList = convertToList(dom.documentElement);
 
-        var theBox = document.getElementById("execphp-3");
-        var latestReleases = theBox.children[1].children[0].children[1].children[0];
+        //var theBox = document.getElementById("execphp-3");
+        //var latestReleases = theBox.children[1].children[0].children[1].children[0];
+        var latestReleases = ((document.getElementsByClassName("latest-releases"))[0]).children[0];
 
         editReleases(latestReleases, nyaaList);
 	});
